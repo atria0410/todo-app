@@ -1,0 +1,83 @@
+{
+  "users": {
+    "table": {
+      "tableName": "users",
+      "comment": "ユーザー"
+    },
+    "columns": [
+      {
+        "tableName": "users",
+        "columnName": "id",
+        "comment": "ID"
+      },
+      {
+        "tableName": "users",
+        "columnName": "name",
+        "comment": "ユーザー名"
+      },
+      {
+        "tableName": "users",
+        "columnName": "email",
+        "comment": "メールアドレス"
+      },
+      {
+        "tableName": "users",
+        "columnName": "password",
+        "comment": "パスワード"
+      },
+      {
+        "tableName": "users",
+        "columnName": "created_at",
+        "comment": "作成日時"
+      },
+      {
+        "tableName": "users",
+        "columnName": "updated_at",
+        "comment": "更新日時"
+      }
+    ]
+  },
+  "todos": {
+    "table": {
+      "tableName": "todos",
+      "comment": "タスク"
+    },
+    "columns": [
+      {
+        "tableName": "todos",
+        "columnName": "id",
+        "comment": "ID"
+      },
+      {
+        "tableName": "todos",
+        "columnName": "userId",
+        "comment": "ユーザーID"
+      },
+      {
+        "tableName": "todos",
+        "columnName": "title",
+        "comment": "タイトル"
+      },
+      {
+        "tableName": "todos",
+        "columnName": "description",
+        "comment": "説明"
+      },
+      {
+        "tableName": "todos",
+        "columnName": "completed",
+        "comment": "完了フラグ"
+      },
+      {
+        "tableName": "todos",
+        "columnName": "created_at",
+        "comment": "作成日時"
+      },
+      {
+        "tableName": "todos",
+        "columnName": "updated_at",
+        "comment": "更新日時"
+      }
+    ]
+  }
+}

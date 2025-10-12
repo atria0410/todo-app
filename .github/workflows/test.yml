@@ -1,0 +1,45 @@
+name: Test on pull request
+
+# PRが作成されたらワークフローを実行
+on:
+  pull_request:
+
+# 同じブランチ・同じワークフローで複数PRが連続したときに前のCIを自動でキャンセルする
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# デフォルトのシェルをbashに設定
+defaults:
+  run:
+    shell: bash
+
+# テストを実行するジョブ
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      # リポジトリをクローン
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Node.jsをセットアップ
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      # 依存関係をインストール
+      - name: Install dependencies
+        run: npm install
+
+      # ESLintを実行
+      - name: Run ESLint
+        run: npm run lint
+
+      # テストを実行
+      - name: Run tests
+        run: npm run test -- --run
